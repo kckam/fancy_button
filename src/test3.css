@@ -1,0 +1,207 @@
+html,
+body {
+  height: 100%;
+  background: black;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+html h1,
+body h1 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  overflow: hidden;
+  padding: 0 100px;
+  z-index: 10;
+}
+
+html .animate:before, html .animate:after,
+body .animate:before,
+body .animate:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+html .animate:before,
+body .animate:before {
+  background: rgba(255, 0, 0, 0.5);
+  -webkit-clip-path: polygon(29% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(29% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+html .animate:after,
+body .animate:after {
+  background: rgba(0, 0, 255, 0.5);
+  -webkit-clip-path: polygon(88% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(88% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+html .animate.active:before,
+body .animate.active:before {
+  -webkit-animation: animate_word 0.5s 0.25s ease-in-out 1 forwards;
+          animation: animate_word 0.5s 0.25s ease-in-out 1 forwards;
+}
+
+html .animate.active:after,
+body .animate.active:after {
+  -webkit-animation: animate_word 0.55s 0.3s ease-in-out 1 forwards;
+          animation: animate_word 0.55s 0.3s ease-in-out 1 forwards;
+}
+
+html ul.images,
+body ul.images {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+html ul.images > .image,
+body ul.images > .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+}
+
+html ul.images > .image.active,
+body ul.images > .image.active {
+  opacity: 0.5;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+html ul.images > .image:nth-child(1),
+body ul.images > .image:nth-child(1) {
+  background: url("https://images.freeimages.com/images/large-previews/047/headed-down-1400175.jpg");
+}
+
+html ul.images > .image:nth-child(2),
+body ul.images > .image:nth-child(2) {
+  background: url("https://images.freeimages.com/images/large-previews/eaf/lighted-gift-2-1420395.jpg");
+}
+
+html ul.images > .image:nth-child(3),
+body ul.images > .image:nth-child(3) {
+  background: url("https://images.freeimages.com/images/large-previews/752/light-1418761.jpg");
+}
+
+html ul.buttons,
+body ul.buttons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html ul.buttons li.button,
+body ul.buttons li.button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  line-height: 58px;
+  width: 150px;
+  height: 60px;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
+  font-size: 2vh;
+  z-index: 2;
+}
+
+html ul.buttons li.button:hover,
+body ul.buttons li.button:hover {
+  color: maroon;
+}
+
+html ul.buttons li.button:hover .rect,
+body ul.buttons li.button:hover .rect {
+  stroke-dashoffset: 90;
+  stroke: maroon;
+}
+
+html ul.buttons li.button svg,
+body ul.buttons li.button svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+html ul.buttons li.button svg .rect,
+body ul.buttons li.button svg .rect {
+  fill: #111;
+  stroke-width: 5;
+  stroke: #444;
+  width: 100%;
+  height: 100%;
+  stroke-dasharray: 60 150;
+  stroke-dashoffset: 300;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
+}
+
+html ul.buttons li.button > span,
+body ul.buttons li.button > span {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+html ul.buttons li.button .bg,
+body ul.buttons li.button .bg {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+@-webkit-keyframes animate_word {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes animate_word {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+/*# sourceMappingURL=test3.css.map */

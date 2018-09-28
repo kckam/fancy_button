@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./src/test3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="animate">Label</h1>
+    <ul class="images">
+        <li class="image"></li>
+        <li class="image"></li>
+        <li class="image"></li>
+    </ul>
+
+    <ul class="buttons">
+        <li class=" button">
+            <svg>
+                <rect class="rect" />
+            </svg>
+            <span>Button</span>
+            <div class="bg"></div>
+        </li>
+
+        <li class="button">
+            <svg>
+                <rect class="rect" />
+            </svg>
+            <span>Button</span>
+            <div class="bg"></div>
+        </li>
+
+        <li class="button">
+            <svg>
+                <rect class="rect" />
+            </svg>
+            <span>Button</span>
+            <div class="bg"></div>
+        </li>
+    </ul>
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script>
+    document.querySelector("h1").classList.add("active");
+
+    $(".button").hover(function () {
+        $(".image").removeClass("active");
+        $(".image:nth-child(" + ($(this).index() + 1) + ")").addClass("active");
+    });
+
+</script>
